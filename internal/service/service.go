@@ -14,6 +14,7 @@ type service struct {
 // Interface defines the service interface
 type Interface interface {
 	NewPost(context.Context, string, string, string, time.Time, bool) error
+	DeletePost(context.Context, string) error
 }
 
 // NewService returns an instances of service

@@ -9,7 +9,7 @@ import (
 )
 
 // NewPost creates a new blog post
-func (s *BlogAPIServer) NewPost(w http.ResponseWriter, req *http.Request) {
+func (s *BlogAPIServer) NewPost(w http.ResponseWriter, r *http.Request) {
 
 	ctx := context.Background()
 
@@ -21,7 +21,7 @@ func (s *BlogAPIServer) NewPost(w http.ResponseWriter, req *http.Request) {
 		Published bool
 	}{}
 
-	json.NewDecoder(req.Body).Decode(&PostRequest)
+	json.NewDecoder(r.Body).Decode(&PostRequest)
 
 	err := s.service.NewPost(ctx, PostRequest.Title, PostRequest.Content, PostRequest.Author, PostRequest.Started, PostRequest.Published)
 	if err != nil {

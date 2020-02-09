@@ -14,6 +14,7 @@ type repository struct {
 // Interface defines the interface for Repp
 type Interface interface {
 	NewPost(context.Context, string, string, string, string, time.Time, bool) error
+	DeletePost(context.Context, string) error
 }
 
 // NewRepo returns a new instance of the Repo Interface

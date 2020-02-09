@@ -29,6 +29,7 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/health", health).Methods("GET")
 	r.HandleFunc("/newpost", apiServer.NewPost).Methods("POST")
+	r.HandleFunc("/deletepost", apiServer.DeletePost).Methods("POST")
 
 	http.ListenAndServe(":8080", r)
 }
