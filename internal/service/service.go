@@ -16,8 +16,8 @@ type ServiceInterface interface {
 	NewPost(context.Context, string, string, string, time.Time, bool) error
 }
 
-func NewService(repo repo.RepoInterface) service {
-	return service{
+func NewService(repo repo.RepoInterface) ServiceInterface {
+	return &service{
 		repo: repo,
 	}
 }
@@ -36,7 +36,7 @@ func (s *service) NewPost(ctx context.Context, title string, content string, aut
 		return errors.New("Author must not be empty")
 	}
 
-	err := s.repo.SavePost(ctx, title, content, author, started, published)
+	err := s.repo.NewPost(ctx, title, content, author, started, published)
 	if err != nil {
 		return err
 	}

@@ -12,7 +12,7 @@ type repo struct {
 }
 
 type RepoInterface interface {
-	SavePost(context.Context, string, string, string, time.Time, bool) error
+	NewPost(context.Context, string, string, string, time.Time, bool) error
 }
 
 func NewRepo(firebaseClient *db.Client) *repo {
@@ -21,7 +21,7 @@ func NewRepo(firebaseClient *db.Client) *repo {
 	}
 }
 
-func SavePost(ctx context.Context, title string, content string, author string, started time.Time, published bool) error {
+func NewPost(ctx context.Context, title string, content string, author string, started time.Time, published bool) error {
 
 	return nil
 
