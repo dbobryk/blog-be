@@ -21,7 +21,7 @@ func NewRepo(firebaseClient *db.Client) *repo {
 	}
 }
 
-func NewPost(ctx context.Context, title string, content string, author string, started time.Time, published bool) error {
+func (r *repo) NewPost(ctx context.Context, title string, content string, author string, started time.Time, published bool) error {
 
 	return nil
 
