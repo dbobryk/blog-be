@@ -7,12 +7,12 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/TinyWarrior/blog-be/internal/service"
+	"github.com/tinywarrior/blog-be/internal/service"
 )
 
 // BlogAPIServer defines the structure for the api server
 type BlogAPIServer struct {
-	service service.ServiceInterface
+	service service.Interface
 }
 
 // NewBlogAPIServer returns an instance of the BlogApiServer

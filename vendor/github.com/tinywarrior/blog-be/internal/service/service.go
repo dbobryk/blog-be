@@ -1,16 +1,12 @@
 package service
 
-import (
-	"github.com/TinyWarrior/blog-be/internal/repo"
-)
 
-
-type service struct {
-	repo repo.RepoInterface
+type service interface {
+	repo repo.Interface
 }
 
 type ServiceInterface interface {
-	NewPost(context.Context, string, string, string, string, bool) error
+	NewPost(context.Context, string, string, string, string) error
 }
 
 func NewService(repo repo.Interface) {
@@ -20,7 +16,7 @@ func NewService(repo repo.Interface) {
 }
 
 
-func (s *service) NewPost (ctx context.Context, title string, content string, author string, started time.Time, published bool) error {
+func (s *service) NewPost (ctx context.Context, title string, content string, author string, started time.Time) error {
 
 	if title == "" {
 		return errors.New("Title must not be empty")
@@ -36,10 +32,6 @@ func (s *service) NewPost (ctx context.Context, title string, content string, au
 
 	if started == time.Time {
 		return errors.New("Started time must not be empty")
-	}
-
-	if published == nil {
-		return errors.New("Published must have a true/false value")
 	}
 
 	s.repo.SavePost()
