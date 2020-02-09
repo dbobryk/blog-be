@@ -1,6 +1,0 @@
-# github.com/gorilla/mux v1.7.3
-github.com/gorilla/mux
-# github.com/tinywarrior/blog-be v0.0.0-20200209014929-6d805fa1a033
-github.com/tinywarrior/blog-be/internal/api
-github.com/tinywarrior/blog-be/internal/repo
-github.com/tinywarrior/blog-be/internal/service
