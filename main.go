@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/TinyWarrior/blog-be/internal/api"
@@ -16,11 +17,14 @@ func main() {
 
 	ctx := context.Background()
 
-	firebaseClient := firebaseconfig.NewFirebaseClient(ctx)
+	firebaseClient, err := firebaseconfig.NewFirebaseConnection(ctx)
+	if err != nil {
+		log.Fatalln("Error initializing firebase: %s", err)
+	}
 
 	repo := repo.NewRepo(firebaseClient)
 	service := service.NewService(repo)
-	apiServer := api.NewBlogApiServer(service)
+	apiServer := api.NewBlogAPIServer(service)
 
 	r := mux.NewRouter()
 	r.HandleFunc("/health", health)

@@ -13,7 +13,7 @@ type service struct {
 }
 
 type ServiceInterface interface {
-	NewPost(context.Context, string, string, string, bool) error
+	NewPost(context.Context, string, string, string, time.Time, bool) error
 }
 
 func NewService(repo repo.RepoInterface) service {

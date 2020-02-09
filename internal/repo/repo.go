@@ -20,3 +20,9 @@ func NewRepo(firebaseClient *db.Client) *repo {
 		firebaseClient: firebaseClient,
 	}
 }
+
+func SavePost(ctx context.Context, title string, content string, author string, started time.Time, published bool) error {
+
+	return nil
+
+}
