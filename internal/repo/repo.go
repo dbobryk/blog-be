@@ -12,7 +12,7 @@ type repo struct {
 }
 
 type RepoInterface interface {
-	SavePost(context.Context, string, string, string, string, time.Time, bool) error
+	SavePost(context.Context, string, string, string, time.Time, bool) error
 }
 
 func NewRepo(firebaseClient *db.Client) *repo {

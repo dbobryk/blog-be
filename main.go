@@ -17,6 +17,7 @@ func main() {
 	ctx := context.Background()
 
 	firebaseClient := firebaseconfig.NewFirebaseClient(ctx)
+
 	repo := repo.NewRepo(firebaseClient)
 	service := service.NewService(repo)
 	apiServer := api.NewBlogApiServer(service)

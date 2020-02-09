@@ -16,7 +16,7 @@ type BlogAPIServer struct {
 }
 
 // NewBlogAPIServer returns an instance of the BlogApiServer
-func NewBlogAPIServer(service service.Interface) *BlogAPIServer {
+func NewBlogAPIServer(service service.ServiceInterface) *BlogAPIServer {
 
 	return &BlogAPIServer{
 		service: service,
@@ -38,9 +38,9 @@ func (s *BlogAPIServer) NewPost(w http.ResponseWriter, req *http.Request) {
 
 	json.NewDecoder(req.Body).Decode(&PostRequest)
 
-	err := service.NewPost(ctx, PostRequest.Title, PostRequest.Content, PostRequest.Author, PostRequest.Started, PostRequest.Published)
+	err := s.service.NewPost(ctx, PostRequest.Title, PostRequest.Content, PostRequest.Author, PostRequest.Started, PostRequest.Published)
 	if err != nil {
-		fmt.Fprintf(w, err)
+		fmt.Fprintf(w, err.Error())
 	}
 
 	fmt.Fprintf(w, "Post saved successfully.")
