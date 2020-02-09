@@ -30,6 +30,7 @@ func main() {
 	r.HandleFunc("/health", health).Methods("GET")
 	r.HandleFunc("/newpost", apiServer.NewPost).Methods("POST")
 	r.HandleFunc("/deletepost", apiServer.DeletePost).Methods("POST")
+	r.HandleFunc("/updatepost", apiServer.UpdatePost).Methods("POST")
 
 	http.ListenAndServe(":8080", r)
 }
