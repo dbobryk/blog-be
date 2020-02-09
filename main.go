@@ -19,7 +19,7 @@ func main() {
 
 	firebaseClient, err := firebaseconfig.NewFirebaseConnection(ctx)
 	if err != nil {
-		log.Fatalln("Error initializing firebase: %s", err)
+		log.Fatalf("Error initializing firebase: %s", err)
 	}
 
 	repo := repo.NewRepo(firebaseClient)
@@ -27,8 +27,8 @@ func main() {
 	apiServer := api.NewBlogAPIServer(service)
 
 	r := mux.NewRouter()
-	r.HandleFunc("/health", health)
-	r.HandleFunc("/NewPost", apiServer.NewPost)
+	r.HandleFunc("/health", health).Methods("GET")
+	r.HandleFunc("/newpost", apiServer.NewPost).Methods("POST")
 
 	http.ListenAndServe(":8080", r)
 }

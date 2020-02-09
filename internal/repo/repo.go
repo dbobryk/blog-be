@@ -7,22 +7,18 @@ import (
 	"firebase.google.com/go/db"
 )
 
-type repo struct {
+type repository struct {
 	firebaseClient *db.Client
 }
 
-type RepoInterface interface {
-	NewPost(context.Context, string, string, string, time.Time, bool) error
+// Interface defines the interface for Repp
+type Interface interface {
+	NewPost(context.Context, string, string, string, string, time.Time, bool) error
 }
 
-func NewRepo(firebaseClient *db.Client) *repo {
-	return &repo{
+// NewRepo returns a new instance of the Repo Interface
+func NewRepo(firebaseClient *db.Client) *repository {
+	return &repository{
 		firebaseClient: firebaseClient,
 	}
-}
-
-func (r *repo) NewPost(ctx context.Context, title string, content string, author string, started time.Time, published bool) error {
-
-	return nil
-
 }
