@@ -37,5 +37,10 @@ func (s *service) NewPost(ctx context.Context, title string, content string, aut
 	}
 
 	err := s.repo.SavePost(ctx, title, content, author, started, published)
+	if err != nil {
+		return err
+	}
+
+	return nil
 
 }

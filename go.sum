@@ -77,6 +77,9 @@ github.com/prometheus/client_model v0.0.0-20190812154241-14fe0d1b01d4/go.mod h1:
 github.com/rogpeppe/go-internal v1.3.0/go.mod h1:M8bDsm7K2OlrFYOpmOWEs/qY81heoFRclV5y23lUDJ4=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81PSLYec5m4=
+github.com/tinywarrior/blog-be v0.0.0-20200209023046-dd2e5133a8c8 h1:HBHlYliuaNfBAl4tWfXclB6SRqfRtkXm+VQm0GO15pM=
+github.com/tinywarrior/blog-be v0.0.0-20200209023046-dd2e5133a8c8/go.mod h1:i2FJ+DMBafzgW8es0EAWFLXEp9Z28kgaBkc7/vexlPA=
+github.com/tinywarrior/blog-be v0.0.0-20200209023046-dd2e5133a8c8/go.mod h1:rF6h6P8okpkYdyKkU/VD8pZeNi+gPHzewSB0U8wy5V0=
 go.opencensus.io v0.21.0/go.mod h1:mSImk1erAIZhrmZN+AvHh14ztQfjbGwt4TtuofqLduU=
 go.opencensus.io v0.22.0/go.mod h1:+kGneAE2xo2IficOXnaByMWTGM9T73dGwxeWcUqIpI8=
 go.opencensus.io v0.22.2 h1:75k/FF0Q2YM8QYo07VPddOLBslDt1MZOdEslOHvmzAs=

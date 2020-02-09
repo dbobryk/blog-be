@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/TinyWarrior/blog-be/internal/api"
+	"github.com/TinyWarrior/blog-be/internal/firebaseconfig"
+	"github.com/TinyWarrior/blog-be/internal/repo"
+	"github.com/TinyWarrior/blog-be/internal/service"
 	"github.com/gorilla/mux"
-	"github.com/tinywarrior/blog-be/internal/api"
-	"github.com/tinywarrior/blog-be/internal/firebaseconfig"
-	"github.com/tinywarrior/blog-be/internal/repo"
-	"github.com/tinywarrior/blog-be/internal/service"
 )
 
 func main() {

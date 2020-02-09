@@ -23,9 +23,6 @@ firebase.google.com/go/messaging
 firebase.google.com/go/storage
 # github.com/BurntSushi/toml v0.3.1
 github.com/BurntSushi/toml
-# github.com/TinyWarrior/blog-be v0.0.0-20200209023046-dd2e5133a8c8
-github.com/TinyWarrior/blog-be/internal/repo
-github.com/TinyWarrior/blog-be/internal/service
 # github.com/golang/groupcache v0.0.0-20191227052852-215e87163ea7
 github.com/golang/groupcache/lru
 # github.com/golang/protobuf v1.3.2
