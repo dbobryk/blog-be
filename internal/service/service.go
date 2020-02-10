@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/TinyWarrior/blog-be/internal/repo"
+	"github.com/TinyWarrior/blog-be/internal/structs"
 )
 
 type service struct {
@@ -16,6 +17,7 @@ type Interface interface {
 	NewPost(context.Context, string, string, string, time.Time, bool) error
 	DeletePost(context.Context, string) error
 	UpdatePost(context.Context, string, string, string, string, bool) error
+	GetPost(context.Context, string) (structs.BlogPost, error)
 }
 
 // NewService returns an instances of service
