@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/TinyWarrior/blog-be/internal/repo"
-	"github.com/TinyWarrior/blog-be/internal/structs"
+	"github.com/dbobryk/blog-be/internal/repo"
+	"github.com/dbobryk/blog-be/internal/structs"
 )
 
 type service struct {

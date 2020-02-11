@@ -1,7 +1,7 @@
 package api
 
 import (
-	"github.com/TinyWarrior/blog-be/internal/service"
+	"github.com/dbobryk/blog-be/internal/service"
 )
 
 // BlogAPIServer defines the structure for the api server

@@ -1,4 +1,4 @@
-module github.com/TinyWarrior/blog-be
+module github.com/dbobryk/blog-be
 
 go 1.13
 

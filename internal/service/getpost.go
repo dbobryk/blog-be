@@ -3,7 +3,7 @@ package service
 import (
 	"context"
 
-	"github.com/TinyWarrior/blog-be/internal/structs"
+	"github.com/dbobryk/blog-be/internal/structs"
 )
 
 func (s *service) GetPost(ctx context.Context, postID string) (structs.BlogPost, error) {

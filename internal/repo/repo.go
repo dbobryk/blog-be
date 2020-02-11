@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"firebase.google.com/go/db"
-	"github.com/TinyWarrior/blog-be/internal/structs"
+	"github.com/dbobryk/blog-be/internal/structs"
 )
 
 type repository struct {

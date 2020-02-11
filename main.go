@@ -6,10 +6,10 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/TinyWarrior/blog-be/internal/api"
-	"github.com/TinyWarrior/blog-be/internal/firebaseconfig"
-	"github.com/TinyWarrior/blog-be/internal/repo"
-	"github.com/TinyWarrior/blog-be/internal/service"
+	"github.com/dbobryk/blog-be/internal/api"
+	"github.com/dbobryk/blog-be/internal/firebaseconfig"
+	"github.com/dbobryk/blog-be/internal/repo"
+	"github.com/dbobryk/blog-be/internal/service"
 	"github.com/gorilla/mux"
 )
 

@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/TinyWarrior/blog-be/internal/structs"
+	"github.com/dbobryk/blog-be/internal/structs"
 )
 
 func (r *repository) GetPost(ctx context.Context, postID string) (structs.BlogPost, error) {
