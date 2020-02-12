@@ -1,10 +1,14 @@
 package service
 
-import "context"
+import (
+	"context"
 
-func (s *service) UpdatePost(ctx context.Context, postID string, title string, author string, content string, published bool) error {
+	"github.com/dbobryk/blog-be/internal/structs"
+)
 
-	err := s.repo.UpdatePost(ctx, postID, title, author, content, published)
+func (s *service) UpdatePost(ctx context.Context, blogPost structs.BlogPost) error {
+
+	err := s.repo.UpdatePost(ctx, blogPost)
 	if err != nil {
 		return err
 	}
