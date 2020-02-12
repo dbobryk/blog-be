@@ -4,17 +4,19 @@ import (
 	"context"
 	"fmt"
 	"time"
+
+	"github.com/dbobryk/blog-be/internal/structs"
 )
 
-func (r *repository) UpdatePost(ctx context.Context, postID string, title string, author string, content string, published bool) error {
+func (r *repository) UpdatePost(ctx context.Context, blogPost structs.BlogPost) error {
 
-	dbKey := fmt.Sprintf("/posts/%s", postID)
+	dbKey := fmt.Sprintf("/posts/%s", blogPost.PostID)
 
 	toUpdate := map[string]interface{}{
-		"Title":     title,
-		"Author":    author,
-		"Content":   content,
-		"Published": published,
+		"Title":     blogPost.Title,
+		"Author":    blogPost.Author,
+		"Content":   blogPost.Content,
+		"Published": blogPost.Published,
 		"Updated":   time.Now(),
 	}
 

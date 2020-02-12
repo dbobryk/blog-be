@@ -3,26 +3,27 @@ package service
 import (
 	"context"
 	"errors"
-	"time"
+
+	"github.com/dbobryk/blog-be/internal/structs"
 )
 
-func (s *service) NewPost(ctx context.Context, title string, content string, author string, started time.Time, published bool) error {
+func (s *service) NewPost(ctx context.Context, blogPost structs.BlogPost) error {
 
-	if title == "" {
+	if blogPost.Title == "" {
 		return errors.New("title must not be empty")
 	}
 
-	if content == "" {
+	if blogPost.Content == "" {
 		return errors.New("content must not be empty")
 	}
 
-	if author == "" {
+	if blogPost.Author == "" {
 		return errors.New("author must not be empty")
 	}
 
-	postID := NewShortUUID()
+	blogPost.PostID = NewShortUUID()
 
-	err := s.repo.NewPost(ctx, postID, title, content, author, started, published)
+	err := s.repo.NewPost(ctx, blogPost)
 	if err != nil {
 		return err
 	}

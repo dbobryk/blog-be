@@ -5,27 +5,23 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+
+	"github.com/dbobryk/blog-be/internal/structs"
 )
 
 func (s *BlogAPIServer) UpdatePost(w http.ResponseWriter, r *http.Request) {
 
 	ctx := context.Background()
 
-	post := struct {
-		PostID    string
-		Title     string
-		Author    string
-		Content   string
-		Published bool
-	}{}
+	var blogPost structs.BlogPost
 
-	json.NewDecoder(r.Body).Decode(&post)
+	json.NewDecoder(r.Body).Decode(&blogPost)
 
-	err := s.service.UpdatePost(ctx, post.PostID, post.Title, post.Author, post.Content, post.Published)
+	err := s.service.UpdatePost(ctx, blogPost)
 	if err != nil {
 		fmt.Fprintf(w, err.Error())
 		return
 	}
 
-	fmt.Fprintf(w, "Updated post: %s", post.PostID)
+	fmt.Fprintf(w, "Updated post: %s", blogPost.PostID)
 }

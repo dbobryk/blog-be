@@ -5,7 +5,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"time"
+
+	"github.com/dbobryk/blog-be/internal/structs"
 )
 
 // NewPost creates a new blog post
@@ -13,17 +14,11 @@ func (s *BlogAPIServer) NewPost(w http.ResponseWriter, r *http.Request) {
 
 	ctx := context.Background()
 
-	PostRequest := struct {
-		Title     string
-		Content   string
-		Author    string
-		Started   time.Time
-		Published bool
-	}{}
+	var blogPost structs.BlogPost
 
-	json.NewDecoder(r.Body).Decode(&PostRequest)
+	json.NewDecoder(r.Body).Decode(&blogPost)
 
-	err := s.service.NewPost(ctx, PostRequest.Title, PostRequest.Content, PostRequest.Author, PostRequest.Started, PostRequest.Published)
+	err := s.service.NewPost(ctx, blogPost)
 	if err != nil {
 		fmt.Fprintf(w, err.Error())
 		return
